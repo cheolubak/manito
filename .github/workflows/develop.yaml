@@ -25,10 +25,11 @@ jobs:
           cd server
           yarn
           yarn build
-          ls -al
       - name: Web Build
         run: |
-          ls -al
+          cd web
+          yarn
+          yarn build
 
   automerge:
     runs-on: ubuntu-latest
