@@ -20,12 +20,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Build
-        env:
-          CI: false
+      - name: Server Build
         run: |
+          cd server
           yarn
           yarn build
+          ls -al
+      - name: Web Build
+        run: |
+          ls -al
 
   automerge:
     runs-on: ubuntu-latest
